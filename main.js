@@ -19,7 +19,7 @@ console.log(newTaskList);
 function removeTask(taskList, title) {
     const newTaskList = [...taskList];
     // On fait un filtre sur notre liste pour afficher que les tâches qui ont un titre différent que celui en entrée
-    const filteredTaskList = newTaskList.filter(task => task.title != title);
+    const filteredTaskList = newTaskList.filter(task => task.title !== title);
     return filteredTaskList;
 }
 
@@ -28,46 +28,17 @@ console.log(filteredTaskList);
 
 /* 4. Basculer l'état d'une tâche */
 const toggleTask = function(task) {
-    task.done = true.done ? false : true;
+    task.done = task.done ? false : true;
     return task;
 }
 
 console.log(toggleTask(taskList[0]));
 
 /* 5. Afficher la liste des tâches */
-function showTasks(taskList, status) {
-
-    /* J'utilise un forEach pour parcourir ma liste de tâches 
-        Et un switch case pour afficher nos cas en fonction du statut
-    */
-    switch(status) {
-        case 1 : 
-            console.log("Toutes les tâches : ");
-            taskList.forEach(task => {
-                console.log(task);
-            })
-            break;
-        case 2 : 
-            console.log("Uniquement les tâches complétées : ");
-            taskList.forEach(task => {
-                if (task.done == true) {
-                    console.log(task);
-                }
-            });
-            break;
-        case 3 :
-            console.log("Seulement les tâches incomplètes : ");
-            taskList.forEach(task => {
-                if (task.done == false) {
-                    console.log(task);
-                }
-            })
-            break;
-        default :
-            console.log("Statut invalide.");
-    }
+const showTasks = (taskList, status) => {
+    return status === undefined ? taskList : taskList.filter(task => task.done === status);
 }
 
-showTasks(taskList, 1);
-showTasks(taskList, 2);
-showTasks(taskList, 3);
+console.log(showTasks(taskList, true));
+console.log(showTasks(taskList, false));
+console.log(showTasks(taskList));
