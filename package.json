@@ -1,0 +1,20 @@
+{
+  "name": "brief3-ecmascript",
+  "version": "1.0.0",
+  "description": "rendu pour brief 3 ECMA Script",
+  "homepage": "https://github.com/OraneM99/brief3-ecmascript#readme",
+  "bugs": {
+    "url": "https://github.com/OraneM99/brief3-ecmascript/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OraneM99/brief3-ecmascript.git"
+  },
+  "license": "ISC",
+  "author": "OraneM99",
+  "type": "module",
+  "main": "main.js",
+  "scripts": {
+    "start" : "node main.js"
+  }
+}
